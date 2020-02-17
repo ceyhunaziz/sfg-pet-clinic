@@ -1,11 +1,9 @@
 package guru.springframework.sfgpetclinic.dao.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -21,7 +19,9 @@ public class Owner implements Serializable {
     private String address;
     private String city;
     private String telephone;
-    private Set<Pet> pets;
+
+    @ElementCollection(targetClass=Pet.class)
+    private Set<Pet> pets = new HashSet<>();
 
     public Owner() {
     }
@@ -29,6 +29,14 @@ public class Owner implements Serializable {
     public Owner(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -77,5 +85,17 @@ public class Owner implements Serializable {
 
     public void setPets(Set<Pet> pets) {
         this.pets = pets;
+    }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", pets=" + pets +
+                '}';
     }
 }

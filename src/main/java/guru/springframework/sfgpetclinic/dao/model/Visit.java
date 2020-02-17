@@ -17,6 +17,9 @@ public class Visit implements Serializable {
     private String description;
     private Pet pet;
 
+    public Visit() {
+    }
+
     public LocalDate getDate() {
         return date;
     }
@@ -39,5 +42,13 @@ public class Visit implements Serializable {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

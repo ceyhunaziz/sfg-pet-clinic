@@ -19,10 +19,6 @@ public class PetType implements Serializable {
     public PetType() {
     }
 
-    public PetType(String name) {
-        this.name = name;
-    }
-
     public Long getId() {
         return id;
     }

@@ -1,9 +1,6 @@
 package guru.springframework.sfgpetclinic.dao.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 import java.time.LocalDate;
@@ -15,7 +12,9 @@ public class Pet implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String name;
     private PetType petType;
+    @Lob
     private Owner owner;
     private LocalDate birthDate;
 
@@ -26,6 +25,22 @@ public class Pet implements Serializable {
         this.petType = petType;
         this.owner = owner;
         this.birthDate = birthDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public PetType getPetType() {
