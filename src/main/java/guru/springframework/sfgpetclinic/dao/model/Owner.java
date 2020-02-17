@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 public class Owner implements Serializable {
@@ -16,6 +17,8 @@ public class Owner implements Serializable {
 
     private String firstName;
     private String lastName;
+
+    Set<Pet> pets;
 
     public Owner() {
     }
@@ -47,5 +50,13 @@ public class Owner implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
