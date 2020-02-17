@@ -21,7 +21,7 @@ public class Owner implements Serializable {
     private String address;
     private String city;
     private String telephone;
-    Set<Pet> pets;
+    private Set<Pet> pets;
 
     public Owner() {
     }
