@@ -28,14 +28,6 @@ public class Pet implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public PetType getPetType() {
         return petType;
     }
