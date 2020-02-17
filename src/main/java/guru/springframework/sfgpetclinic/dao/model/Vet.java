@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 public class Vet implements Serializable {
@@ -16,6 +17,8 @@ public class Vet implements Serializable {
 
     private String firstName;
     private String lastName;
+
+    private Set<Speciality> specialities;
 
     public Vet() {
     }
@@ -47,5 +50,13 @@ public class Vet implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<Speciality> getSpecialities() {
+        return specialities;
+    }
+
+    public void setSpecialities(Set<Speciality> specialities) {
+        this.specialities = specialities;
     }
 }
